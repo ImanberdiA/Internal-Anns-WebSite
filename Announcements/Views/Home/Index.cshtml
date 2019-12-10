@@ -1,0 +1,15 @@
+﻿@using Announcements.Models
+@model IEnumerable<Announ>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @using (Ajax.BeginForm("AnnSearch", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="name" />
+        <input type="submit" value="Поиск" />
+    }
+    <div id="results"></div>
+</div>
